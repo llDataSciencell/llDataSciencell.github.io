@@ -1,22 +1,17 @@
 # DataScience wiki
 
-[DataScience](item2.md)
+[Fintech](fintech.md)
 - - - -
 [Links](links.md)
 - - - -
 [TechMemo](tech_memo.md)
 - - - -
-[Command](command_memo.md)
-- - - -
-[Menu Item 1]()
+[Menu preparing]()
 
-  * # SubMenu Heading 1
+  * # 準備中1
   * [SubMenu Item 1](aaaa.md)
-  * [SubMenu Item 2](subitem2.md)
+  * [SubMenu Item 2](bbbb.md)
   - - - -
-  * # SubMenu Heading 2
-  * [SubMenu Item 3](subitem3.md)
-  - - - -
-  * # SubMenu Heading 3
-  * [SubMenu Item 3](subitem3.md)
+  * # 準備中2
+  * [SubMenu Item 3](cccc.md)
 
