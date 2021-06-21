@@ -6,5 +6,6 @@
 
 最終的にはご自身の判断で決めていただきたいですが、私はQUOREAというFXの自動運用のサイトを用いてトレードを行っております。
 
-
+### 登録はこちら
+https://quorea.jp/?referral_code=mQ8mN1erLNqrEnyP%2F6xjEw%3D%3D
 
