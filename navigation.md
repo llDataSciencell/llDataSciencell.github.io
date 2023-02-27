@@ -1,12 +1,11 @@
 # DataScience wiki
 
-[Fintech](fintech.md)
-- - - -
+
 [Links](links.md)
 - - - -
 [TechMemo](tech_memo.md)
 - - - -
-[Menu preparing]()
+[preparing]()
 
   * # 準備中1
   * [SubMenu Item 1](aaaa.md)
