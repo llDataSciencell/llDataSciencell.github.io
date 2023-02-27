@@ -36,4 +36,19 @@ Hokuriku AI Meetup という勉強会や、金沢人工知能勉強会(KAIM)を�
 
 # 実績
 
+## 受賞歴
+
+- 2019年 <a href="https://www.ipsj-hokuriku.gr.jp/awards/pdf/2019/yusyu_ronbun.pdf">令和元年度 情報処理学会北陸支部 優秀論文発表賞</a>
+- 2021年 signateのコンテストに置いてチームで銀メダル
+- 2022年4月 社内のデータ分析コンテストにおいて優勝
+
+## 特許
+
 <a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202203019651724059">情報処理装置、情報処理方法、および情報処理プログラム</a>
+
+## 論文
+
+- 上野友裕, “<a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202002277386532439">OpenPoseによる日本語対応手話のカナ指文字の分類</a>,” in 2019年度電気・情報関係学会北陸支部連合大会, F2-31, 2019.
+- 上野友裕,"<a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202002258201817410">骨格座標推定による日本語対応手話の分類</a>,"in 情報処理学会創立60周年記念 第82回全国大会, 4C-05, 2020.
+
+
