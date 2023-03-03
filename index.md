@@ -1,5 +1,3 @@
-<meta name="google-site-verification" content="u3EHb5l5KwTFFi_AEGeIGZkopjGE_JYxRbxMLBKeyJk" />
-
 # 上野 友裕のポートフォリオサイト
 
 <img src="./Images/selfie.jpg" width="350">
