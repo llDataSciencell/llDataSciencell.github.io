@@ -12,7 +12,9 @@
 
 ## 機械学習関係
 
-paperswithcode.com [paperswithcode.com 〜機械学習のモデルのコードとSOTAがわかる〜](https://paperswithcode.com/sota)
+[paperswithcode.com (SOTAモデルの検索)](https://paperswithcode.com/sota)
+
+[theresanaiforthat.com (最新のトレンドを調査)](https://theresanaiforthat.com/#switch)
 
 ## 便利ツール
 
