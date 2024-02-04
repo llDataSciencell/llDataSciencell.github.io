@@ -521,7 +521,7 @@
 <p>今回紹介する論文は「<a href="https://arxiv.org/abs/2106.09685">LoRA: Low-Rank Adaptaion of Large Language Models</a> [1]」です。</p>
 <p>[1]E. J. Hu <em>et al.</em>, “LoRA: Low-Rank Adaptation of Large Language Models.” arXiv, Oct. 16, 2021. Accessed: Feb. 04, 2024. [Online]. Available: http://arxiv.org/abs/2106.09685</p>
 <p>この論文は、大規模な言語モデルの効率的なタスク固有の適応方法であるLow-Rank Adaptation (LoRA) を提案しています。LoRAは、トランスフォーマーアーキテクチャの各層において、訓練可能なランク分解行列を導入することで、事前学習されたモデルの重みを凍結させつつ、適応時の訓練可能パラメータの数を大幅に削減します。GPT-3 175Bなどの大規模モデルにおいて、LoRAは微調整と同等またはそれ以上のモデル品質を達成しつつ、訓練可能パラメータの数を1万分の1に減少させ、GPUメモリ要件を3分の1に削減することができます。また、LoRAは追加の推論レイテンシーを発生させずに、複数のタスク間で効率的に切り替えることが可能であり、他の適応技術と組み合わせることもできます。</p>
-<p><img src="../img/image-20240204230141097.png" alt="image-20240204230141097" style="zoom:67%;" /></p>
+<p><img alt="LoRAのA, Bの行列" src="../../img/image-20240204230141097.png" /> </p>
 <p>Figure 1より引用</p>
 <p>LoRAでは、もともとあったGPTなどのパラメータをファインチューニングする必要はなく、Figure 1で言う AとBのみ学習すれば良いです。(詳細は<a href="https://zenn.dev/fusic/articles/paper-reading-lora">こちらのブログ記事</a>に分かりやすく書かれています）</p>
 <h2 id="_1">数式の解説</h2>
