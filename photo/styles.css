@@ -26,7 +26,7 @@ img {
 
 .fade {
     animation-name: fade;
-    animation-duration: 0.5s;
+    animation-duration: 7s;
 }
 
 @keyframes fade {
