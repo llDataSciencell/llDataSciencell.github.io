@@ -4,18 +4,12 @@ const slideInterval = 3500; // Interval time in milliseconds (3.5 seconds)
 let slideTimer;
 let isAllAlbumsLoop = false;
 
-// Define the album structure
-const albums = {
-    "imgs_1": ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"],
-    "imgs_2": ["photoA.jpg", "photoB.jpg", "photoC.jpg", "photoD.jpg", "photoE.jpg"],
-    "imgs_3": ["pic_01.png", "pic_02.png", "pic_03.png", "pic_04.png", "pic_05.png"],
-    // Add more albums as needed
-};
+const albums = {}; // Albums will be loaded from JSON dynamically
+const albumKeys = [];
 
-// Extract album keys dynamically
-const albumKeys = Object.keys(albums);
-
-document.addEventListener("DOMContentLoaded", () => {
+// Initialize the slideshow
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadAlbums();
     if (albumKeys.length > 0) {
         loadAlbum(0);
         createAlbumIndicators();
@@ -23,6 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("アルバムが見つかりませんでした。");
     }
 });
+
+// Load albums dynamically from JSON
+async function loadAlbums() {
+    try {
+        const response = await fetch("albums.json");
+        if (!response.ok) {
+            throw new Error("Failed to load albums.json");
+        }
+        const data = await response.json();
+        Object.assign(albums, data);
+        albumKeys.push(...Object.keys(albums));
+    } catch (error) {
+        console.error("Error loading albums:", error);
+    }
+}
 
 function loadAlbum(albumIndex) {
     isAllAlbumsLoop = false; // Reset all albums loop mode
