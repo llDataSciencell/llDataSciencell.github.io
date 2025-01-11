@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log(`Loaded albums: ${albumKeys.join(", ")}`);
         loadAlbum(0);
         createAlbumIndicators();
+        updateAlbumIndicators(); // Ensure the initial indicator is set to album 1
     } else {
         console.error("No albums found.");
         alert("アルバムが見つかりませんでした。");
@@ -95,8 +96,10 @@ function updateAlbumIndicators() {
     albumIndicators.forEach((indicator, index) => {
         if (index === currentAlbum || (isAllAlbumsLoop && index === currentAlbumIndex)) {
             indicator.classList.add('active');
+            indicator.style.backgroundColor = "blue"; // Active album is blue
         } else {
             indicator.classList.remove('active');
+            indicator.style.backgroundColor = "lightblue"; // Non-active albums are light blue
         }
     });
 }
