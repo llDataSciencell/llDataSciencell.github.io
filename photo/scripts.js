@@ -1,6 +1,6 @@
 let slideIndex = 0;
 let currentAlbum = 0;
-const slideInterval = 7500; // Interval time in milliseconds (3.5 seconds)
+const slideInterval = 9000; // Interval time in milliseconds (3.5 seconds)
 let slideTimer;
 let isAllAlbumsLoop = false;
 
