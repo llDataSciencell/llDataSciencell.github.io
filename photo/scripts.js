@@ -9,8 +9,10 @@ const albumKeys = [];
 
 // Initialize the slideshow
 document.addEventListener("DOMContentLoaded", async () => {
+    console.log("Initializing slideshow...");
     await loadAlbums();
     if (albumKeys.length > 0) {
+        console.log(`Loaded albums: ${albumKeys.join(", ")}`);
         loadAlbum(0);
         createAlbumIndicators();
     } else {
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Load albums dynamically from JSON
 async function loadAlbums() {
     try {
+        console.log("Loading albums from albums.json...");
         const response = await Promise.race([
             fetch("albums.json"),
             new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout")), 10000)) // 10秒でタイムアウト
@@ -37,9 +40,8 @@ async function loadAlbums() {
     }
 }
 
-
-
 function loadAlbum(albumIndex) {
+    console.log(`Loading album at index: ${albumIndex}`);
     isAllAlbumsLoop = false; // Reset all albums loop mode
     currentAlbum = albumIndex;
     const slideshowContainer = document.querySelector('.slideshow-container');
@@ -48,7 +50,14 @@ function loadAlbum(albumIndex) {
     const albumName = albumKeys[albumIndex];
     const imageList = albums[albumName];
 
+    if (!imageList || imageList.length === 0) {
+        console.error(`No images found in album: ${albumName}`);
+        alert(`アルバム「${albumName}」に画像が見つかりませんでした。`);
+        return;
+    }
+
     imageList.forEach((image) => {
+        console.log(`Adding image: ${albumName}/${image}`);
         const slideDiv = document.createElement('div');
         slideDiv.className = 'mySlides fade';
         const img = document.createElement('img');
@@ -67,6 +76,7 @@ function loadAlbum(albumIndex) {
 }
 
 function createAlbumIndicators() {
+    console.log("Creating album indicators...");
     const albumIndicators = document.querySelector('.album-indicators');
     albumIndicators.innerHTML = ''; // Clear existing indicators
     albumKeys.forEach((_, index) => {
@@ -79,6 +89,7 @@ function createAlbumIndicators() {
 }
 
 function updateAlbumIndicators() {
+    console.log("Updating album indicators...");
     const albumIndicators = document.querySelectorAll('.album-indicator');
     albumIndicators.forEach((indicator, index) => {
         if (index === currentAlbum) {
@@ -90,12 +101,18 @@ function updateAlbumIndicators() {
 }
 
 function nextAlbum() {
+    console.log("Switching to the next album...");
     currentAlbum = (currentAlbum + 1) % albumKeys.length;
     loadAlbum(currentAlbum);
 }
 
 function showSlides() {
+    console.log("Showing slides...");
     const slides = document.getElementsByClassName("mySlides");
+    if (slides.length === 0) {
+        console.error("No slides to display.");
+        return;
+    }
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
@@ -103,22 +120,24 @@ function showSlides() {
     if (slideIndex > slides.length) {
         slideIndex = 1;
     }
-    if (slides.length > 0) {
-        slides[slideIndex - 1].style.display = "block";
-    }
+    slides[slideIndex - 1].style.display = "block";
+
     clearTimeout(slideTimer);
-    slideTimer = setTimeout(isAllAlbumsLoop ? showAllAlbumsSlides : showSlides, slideInterval); // Adapt based on mode
+    slideTimer = setTimeout(isAllAlbumsLoop ? showAllAlbumsSlides : showSlides, slideInterval);
 }
 
 function startAllAlbumsLoop() {
+    console.log("Starting loop for all albums...");
     isAllAlbumsLoop = true;
     slideIndex = 0;
+    currentAlbumIndex = 0; // Reset the album index
     showAllAlbumsSlides();
 }
 
 let currentAlbumIndex = 0; // Track the current album being displayed
 
 function showAllAlbumsSlides() {
+    console.log(`Displaying album ${currentAlbumIndex + 1} / ${albumKeys.length}...`);
     const slideshowContainer = document.querySelector('.slideshow-container');
     slideshowContainer.innerHTML = '';
 
@@ -126,20 +145,18 @@ function showAllAlbumsSlides() {
     const albumName = albumKeys[currentAlbumIndex];
     const imageList = albums[albumName];
 
-    // Ensure the album has images
     if (!imageList || imageList.length === 0) {
         console.error(`No images found in album: ${albumName}`);
-        alert(`アルバム「${albumName}」に画像が見つかりませんでした。`);
-        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length; // Move to the next album
-        slideIndex = 0; // Reset slideIndex for the next album
-        showAllAlbumsSlides(); // Retry with the next album
+        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length;
+        slideIndex = 0;
+        showAllAlbumsSlides();
         return;
     }
 
     // Get the current image to display
     const currentImage = imageList[slideIndex];
+    console.log(`Displaying image: ${albumName}/${currentImage}`);
 
-    // Create the slide element
     const slideDiv = document.createElement('div');
     slideDiv.className = 'mySlides fade';
     const img = document.createElement('img');
@@ -147,7 +164,6 @@ function showAllAlbumsSlides() {
     img.style.width = '100%';
     img.onerror = () => {
         console.error(`Failed to load image: ${albumName}/${currentImage}`);
-        alert(`画像の読み込みに失敗しました: ${albumName}/${currentImage}`);
     };
     slideDiv.appendChild(img);
     slideshowContainer.appendChild(slideDiv);
@@ -155,15 +171,12 @@ function showAllAlbumsSlides() {
     // Increment slideIndex and check if we've reached the end of the album
     slideIndex++;
     if (slideIndex >= imageList.length) {
-        slideIndex = 0; // Reset slideIndex
-        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length; // Move to the next album
+        slideIndex = 0;
+        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length;
     }
 
-    // Set timer for the next slide
     clearTimeout(slideTimer);
     slideTimer = setTimeout(showAllAlbumsSlides, slideInterval);
 }
-
-
 
 
