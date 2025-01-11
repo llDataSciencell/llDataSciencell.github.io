@@ -23,7 +23,7 @@ async function loadAlbums() {
     try {
         const response = await fetch("albums.json");
         if (!response.ok) {
-            throw new Error("Failed to load albums.json");
+            throw new Error(`Failed to load albums.json: ${response.status}`);
         }
         const data = await response.json();
         Object.assign(albums, data);
@@ -46,8 +46,11 @@ function loadAlbum(albumIndex) {
         const slideDiv = document.createElement('div');
         slideDiv.className = 'mySlides fade';
         const img = document.createElement('img');
-        img.src = `${albumName}/${image}`;
+        img.src = `${albumName}/${image}`; // Use the image names from albums.json
         img.style.width = '100%';
+        img.onerror = () => {
+            console.error(`Failed to load image: ${albumName}/${image}`);
+        };
         slideDiv.appendChild(img);
         slideshowContainer.appendChild(slideDiv);
     });
@@ -91,7 +94,9 @@ function showSlides() {
         slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
     if (slides.length > 0) {
         slides[slideIndex - 1].style.display = "block";
     }
@@ -120,16 +125,19 @@ function showAllAlbumsSlides() {
     const img = document.createElement('img');
     img.src = allImages[slideIndex];
     img.style.width = '100%';
+    img.onerror = () => {
+        console.error(`Failed to load image: ${allImages[slideIndex]}`);
+    };
     slideDiv.appendChild(img);
     slideshowContainer.appendChild(slideDiv);
 
     slideIndex++;
-    if (slideIndex >= allImages.length) { slideIndex = 0; }
+    if (slideIndex >= allImages.length) {
+        slideIndex = 0;
+    }
     clearTimeout(slideTimer);
     slideTimer = setTimeout(showAllAlbumsSlides, slideInterval);
 }
-
-
 
 
 
