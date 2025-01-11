@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Load albums dynamically from JSON
 async function loadAlbums() {
     try {
-        const response = await fetch("albums.json");
+        const response = await Promise.race([
+            fetch("albums.json"),
+            new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout")), 10000)) // 10秒でタイムアウト
+        ]);
         if (!response.ok) {
             throw new Error(`Failed to load albums.json: ${response.status}`);
         }
@@ -30,8 +33,11 @@ async function loadAlbums() {
         albumKeys.push(...Object.keys(albums));
     } catch (error) {
         console.error("Error loading albums:", error);
+        alert("アルバムデータの読み込みに失敗しました。");
     }
 }
+
+
 
 function loadAlbum(albumIndex) {
     isAllAlbumsLoop = false; // Reset all albums loop mode
