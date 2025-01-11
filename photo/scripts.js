@@ -113,6 +113,8 @@ function startAllAlbumsLoop() {
 function showAllAlbumsSlides() {
     const slideshowContainer = document.querySelector('.slideshow-container');
     slideshowContainer.innerHTML = '';
+
+    // Create a single list of all images from all albums
     const allImages = [];
     albumKeys.forEach((albumName) => {
         albums[albumName].forEach((image) => {
@@ -120,10 +122,17 @@ function showAllAlbumsSlides() {
         });
     });
 
+    // Check if allImages has content
+    if (allImages.length === 0) {
+        console.error("No images found for all albums.");
+        return;
+    }
+
+    // Create the current slide
     const slideDiv = document.createElement('div');
     slideDiv.className = 'mySlides fade';
     const img = document.createElement('img');
-    img.src = allImages[slideIndex];
+    img.src = allImages[slideIndex]; // Use the current slideIndex
     img.style.width = '100%';
     img.onerror = () => {
         console.error(`Failed to load image: ${allImages[slideIndex]}`);
@@ -131,10 +140,13 @@ function showAllAlbumsSlides() {
     slideDiv.appendChild(img);
     slideshowContainer.appendChild(slideDiv);
 
+    // Increment slideIndex and loop back if necessary
     slideIndex++;
     if (slideIndex >= allImages.length) {
-        slideIndex = 0;
+        slideIndex = 0; // Reset to the beginning
     }
+
+    // Set timer for the next slide
     clearTimeout(slideTimer);
     slideTimer = setTimeout(showAllAlbumsSlides, slideInterval);
 }
