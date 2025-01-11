@@ -15,6 +15,7 @@ body {
 
 .mySlides.active {
     display: block; /* 現在のスライドのみ表示 */
+    z-index: 1; /* 他の要素の背後に隠れないようにする */
 }
 
 img {
@@ -25,7 +26,7 @@ img {
 
 .fade {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 2.5s;
 }
 
 @keyframes fade {
