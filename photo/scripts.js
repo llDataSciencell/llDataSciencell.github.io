@@ -93,7 +93,7 @@ function updateAlbumIndicators() {
     console.log("Updating album indicators...");
     const albumIndicators = document.querySelectorAll('.album-indicator');
     albumIndicators.forEach((indicator, index) => {
-        if (index === currentAlbum) {
+        if (index === currentAlbum || (isAllAlbumsLoop && index === currentAlbumIndex)) {
             indicator.classList.add('active');
         } else {
             indicator.classList.remove('active');
@@ -177,6 +177,8 @@ function showAllAlbumsSlides() {
         slideIndex = 0;
         currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length;
     }
+
+    updateAlbumIndicators(); // Update indicators during the loop
 
     clearTimeout(slideTimer);
     console.log("Setting next slide timer...");
