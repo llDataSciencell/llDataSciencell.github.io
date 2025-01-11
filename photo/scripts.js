@@ -131,6 +131,7 @@ function showAllAlbumsSlides() {
     // Check if allImages has content
     if (allImages.length === 0) {
         console.error("No images found for all albums.");
+        alert("全アルバムの画像が見つかりませんでした。");
         return;
     }
 
@@ -142,6 +143,7 @@ function showAllAlbumsSlides() {
     img.style.width = '100%';
     img.onerror = () => {
         console.error(`Failed to load image: ${allImages[slideIndex]}`);
+        alert(`画像の読み込みに失敗しました: ${allImages[slideIndex]}`);
     };
     slideDiv.appendChild(img);
     slideshowContainer.appendChild(slideDiv);
@@ -156,6 +158,7 @@ function showAllAlbumsSlides() {
     clearTimeout(slideTimer);
     slideTimer = setTimeout(showAllAlbumsSlides, slideInterval);
 }
+
 
 
 
