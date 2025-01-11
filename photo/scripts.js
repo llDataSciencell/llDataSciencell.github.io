@@ -116,42 +116,47 @@ function startAllAlbumsLoop() {
     showAllAlbumsSlides();
 }
 
+let currentAlbumIndex = 0; // Track the current album being displayed
+
 function showAllAlbumsSlides() {
     const slideshowContainer = document.querySelector('.slideshow-container');
     slideshowContainer.innerHTML = '';
 
-    // Create a single list of all images from all albums
-    const allImages = [];
-    albumKeys.forEach((albumName) => {
-        albums[albumName].forEach((image) => {
-            allImages.push(`${albumName}/${image}`);
-        });
-    });
+    // Get the current album name and its image list
+    const albumName = albumKeys[currentAlbumIndex];
+    const imageList = albums[albumName];
 
-    // Check if allImages has content
-    if (allImages.length === 0) {
-        console.error("No images found for all albums.");
-        alert("全アルバムの画像が見つかりませんでした。");
+    // Ensure the album has images
+    if (!imageList || imageList.length === 0) {
+        console.error(`No images found in album: ${albumName}`);
+        alert(`アルバム「${albumName}」に画像が見つかりませんでした。`);
+        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length; // Move to the next album
+        slideIndex = 0; // Reset slideIndex for the next album
+        showAllAlbumsSlides(); // Retry with the next album
         return;
     }
 
-    // Create the current slide
+    // Get the current image to display
+    const currentImage = imageList[slideIndex];
+
+    // Create the slide element
     const slideDiv = document.createElement('div');
     slideDiv.className = 'mySlides fade';
     const img = document.createElement('img');
-    img.src = allImages[slideIndex]; // Use the current slideIndex
+    img.src = `${albumName}/${currentImage}`;
     img.style.width = '100%';
     img.onerror = () => {
-        console.error(`Failed to load image: ${allImages[slideIndex]}`);
-        alert(`画像の読み込みに失敗しました: ${allImages[slideIndex]}`);
+        console.error(`Failed to load image: ${albumName}/${currentImage}`);
+        alert(`画像の読み込みに失敗しました: ${albumName}/${currentImage}`);
     };
     slideDiv.appendChild(img);
     slideshowContainer.appendChild(slideDiv);
 
-    // Increment slideIndex and loop back if necessary
+    // Increment slideIndex and check if we've reached the end of the album
     slideIndex++;
-    if (slideIndex >= allImages.length) {
-        slideIndex = 0; // Reset to the beginning
+    if (slideIndex >= imageList.length) {
+        slideIndex = 0; // Reset slideIndex
+        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length; // Move to the next album
     }
 
     // Set timer for the next slide
