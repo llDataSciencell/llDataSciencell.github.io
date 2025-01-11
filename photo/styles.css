@@ -10,11 +10,17 @@ body {
 }
 
 .mySlides {
-    display: none;
+    display: none; /* すべて非表示 (初期状態) */
+}
+
+.mySlides.active {
+    display: block; /* 現在のスライドのみ表示 */
 }
 
 img {
     vertical-align: middle;
+    max-width: 100%; /* 画像がコンテナをはみ出さないようにする */
+    height: auto; /* アスペクト比を維持 */
 }
 
 .fade {

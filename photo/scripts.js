@@ -136,20 +136,27 @@ function startAllAlbumsLoop() {
 
 let currentAlbumIndex = 0; // Track the current album being displayed
 
+
+
 function showAllAlbumsSlides() {
     console.log(`Displaying album ${currentAlbumIndex + 1} / ${albumKeys.length}...`);
     const slideshowContainer = document.querySelector('.slideshow-container');
-    slideshowContainer.innerHTML = '';
+    slideshowContainer.innerHTML = ''; // Clear existing slides
 
     // Get the current album name and its image list
     const albumName = albumKeys[currentAlbumIndex];
     const imageList = albums[albumName];
 
+    // Debug: Log the album and images being processed
+    console.log(`Current album: ${albumName}`);
+    console.log(`Images in album: ${imageList.join(", ")}`);
+
+    // Ensure the album has images
     if (!imageList || imageList.length === 0) {
         console.error(`No images found in album: ${albumName}`);
-        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length;
-        slideIndex = 0;
-        showAllAlbumsSlides();
+        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length; // Move to the next album
+        slideIndex = 0; // Reset slideIndex for the next album
+        showAllAlbumsSlides(); // Retry with the next album
         return;
     }
 
@@ -157,26 +164,29 @@ function showAllAlbumsSlides() {
     const currentImage = imageList[slideIndex];
     console.log(`Displaying image: ${albumName}/${currentImage}`);
 
+    // Create the slide element
     const slideDiv = document.createElement('div');
-    slideDiv.className = 'mySlides fade';
+    slideDiv.className = 'mySlides fade active'; // Add 'active' class to make it visible
     const img = document.createElement('img');
     img.src = `${albumName}/${currentImage}`;
     img.style.width = '100%';
     img.onerror = () => {
         console.error(`Failed to load image: ${albumName}/${currentImage}`);
     };
+
+    // Append the image to the slide and add it to the container
     slideDiv.appendChild(img);
     slideshowContainer.appendChild(slideDiv);
 
     // Increment slideIndex and check if we've reached the end of the album
     slideIndex++;
     if (slideIndex >= imageList.length) {
-        slideIndex = 0;
-        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length;
+        slideIndex = 0; // Reset slideIndex
+        currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length; // Move to the next album
     }
 
+    // Set timer for the next slide
     clearTimeout(slideTimer);
     slideTimer = setTimeout(showAllAlbumsSlides, slideInterval);
 }
-
 
