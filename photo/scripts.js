@@ -84,10 +84,12 @@ function createAlbumIndicators() {
 function updateAlbumIndicators() {
     const albumIndicators = document.querySelectorAll('.album-indicator');
     albumIndicators.forEach((indicator, index) => {
-        if (index === currentAlbum || (isAllAlbumsLoop && index === currentAlbumIndex)) {
+        if (index === currentAlbum) {
+            // 現在選択されているアルバムのインジケーターを青に設定
             indicator.classList.add('active');
             indicator.style.backgroundColor = "blue";
         } else {
+            // 選択されていないアルバムのインジケーターを薄い水色に設定
             indicator.classList.remove('active');
             indicator.style.backgroundColor = "lightblue";
         }
