@@ -7,13 +7,12 @@ let isAllAlbumsLoop = false;
 const albums = {}; // Albums will be loaded from JSON dynamically
 const albumKeys = [];
 
-// Initialize the slideshow
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("Initializing slideshow...");
     await loadAlbums();
     if (albumKeys.length > 0) {
         console.log(`Loaded albums: ${albumKeys.join(", ")}`);
-        loadAlbum(0);
+        loadAlbum(0); // デフォルトで1番目のアルバムをロード
         createAlbumIndicators();
         updateAlbumIndicators();
     } else {
@@ -123,9 +122,10 @@ function startAllAlbumsLoop() {
     isAllAlbumsLoop = true;
     slideIndex = 0;
     currentAlbumIndex = 0;
+    currentAlbum = 0; // 現在のアルバムをリセット
+    updateAlbumIndicators(); // インジケータをリセット
     showAllAlbumsSlides();
 }
-
 let currentAlbumIndex = 0;
 
 function showAllAlbumsSlides() {
