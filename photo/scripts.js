@@ -122,10 +122,10 @@ function startAllAlbumsLoop() {
     isAllAlbumsLoop = true;
     slideIndex = 0;
     currentAlbumIndex = 0; // 全アルバムループ時の現在のアルバムインデックスをリセット
+    currentAlbum = currentAlbumIndex; // 現在のアルバムにリセット
     updateAlbumIndicators(); // インジケータをリセット
     showAllAlbumsSlides();
 }
-
 let currentAlbumIndex = 0;
 
 function showAllAlbumsSlides() {
@@ -164,5 +164,4 @@ function showAllAlbumsSlides() {
 
     slideTimer = setTimeout(showAllAlbumsSlides, slideInterval);
 }
-
 
