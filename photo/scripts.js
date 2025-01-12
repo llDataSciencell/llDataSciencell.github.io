@@ -121,11 +121,11 @@ function showSlides() {
 function startAllAlbumsLoop() {
     isAllAlbumsLoop = true;
     slideIndex = 0;
-    currentAlbumIndex = 0;
-    currentAlbum = 0; // 現在のアルバムをリセット
+    currentAlbumIndex = 0; // 全アルバムループ時の現在のアルバムインデックスをリセット
     updateAlbumIndicators(); // インジケータをリセット
     showAllAlbumsSlides();
 }
+
 let currentAlbumIndex = 0;
 
 function showAllAlbumsSlides() {
@@ -136,6 +136,7 @@ function showAllAlbumsSlides() {
     const imageList = albums[albumName];
 
     if (!imageList || imageList.length === 0) {
+        // 現在のアルバムに画像がない場合、次のアルバムに進む
         currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length;
         slideIndex = 0;
         showAllAlbumsSlides();
@@ -158,7 +159,9 @@ function showAllAlbumsSlides() {
         currentAlbumIndex = (currentAlbumIndex + 1) % albumKeys.length;
     }
 
-    updateAlbumIndicators();
+    currentAlbum = currentAlbumIndex; // 現在のアルバムをインジケータに反映
+    updateAlbumIndicators(); // インジケータを更新
+
     slideTimer = setTimeout(showAllAlbumsSlides, slideInterval);
 }
 
