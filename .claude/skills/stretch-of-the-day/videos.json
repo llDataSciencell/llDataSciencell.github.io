@@ -1,0 +1,205 @@
+{
+  "_comment": "日本語解説のYouTubeストレッチ動画キュレーション。5カテゴリ×複数本で日替わりローテーション。URLは2026年5月時点で確認したもの。リンク切れがあればPRで更新。",
+  "categories": {
+    "neck": {
+      "label": "首こり",
+      "videos": [
+        {
+          "title": "ストレートネックの方にオススメのストレッチ｜首まわり・肩まわりのコリにも！【8分間】",
+          "url": "https://www.youtube.com/watch?v=TMLD9KPweRo",
+          "duration": "約8分",
+          "channel": "Stretch Channel",
+          "note": "ストレートネック改善。前〜側面の首筋を丁寧にほぐす"
+        },
+        {
+          "title": "首コリの悩みに！オススメのストレッチ【7種目】",
+          "url": "https://www.youtube.com/watch?v=t4EaoXBnPyE",
+          "duration": "約7分",
+          "channel": "オガトレ",
+          "note": "理学療法士監修。種目ごとの解説が分かりやすい"
+        },
+        {
+          "title": "首まわりをふわふわに｜コリをほぐすストレッチ【6分間】",
+          "url": "https://www.youtube.com/watch?v=cWmcmu5jC1o",
+          "duration": "約6分",
+          "channel": "Stretch Channel",
+          "note": "種目間解説なしのテンポ良いセッション"
+        },
+        {
+          "title": "首こり改善ストレッチ（健康カプセル！ゲンキの時間）",
+          "url": "https://www.youtube.com/watch?v=d7_ssXAjEVc",
+          "duration": "約5分",
+          "channel": "TBS / ゲンキの時間",
+          "note": "医師監修。短時間で要点を押さえたい人向け"
+        },
+        {
+          "title": "首のこりをほぐす簡単ストレッチ",
+          "url": "https://npo-tkm.or.jp/stretch-4/",
+          "duration": "約4分",
+          "channel": "YOKOHAMA TKM スポーツ＆ヘルスケア",
+          "note": "NPOによる安全寄りの基本ストレッチ"
+        }
+      ]
+    },
+    "shoulder": {
+      "label": "肩こり",
+      "videos": [
+        {
+          "title": "【しっかり６分】ガチガチの肩こりを解消するしっかりストレッチ！",
+          "url": "https://www.youtube.com/watch?v=4zC3TO8DQms",
+          "duration": "約6分",
+          "channel": "オガトレ",
+          "note": "肩甲骨〜首後面を丁寧に。デスクワーク後に"
+        },
+        {
+          "title": "肩こりを本気でほぐす９分間ストレッチ【ヨガ＆マッサージ】",
+          "url": "https://www.youtube.com/watch?v=REEOGX1YUec",
+          "duration": "約9分",
+          "channel": "B-life / Marikoヨガ系",
+          "note": "ヨガ要素+マッサージ。じっくりほぐしたい日に"
+        },
+        {
+          "title": "【3分肩こり解消】ガチガチの肩こりや背中の張りを解消する時短ストレッチ！",
+          "url": "https://www.youtube.com/watch?v=x4UHQaRVc44",
+          "duration": "約3分",
+          "channel": "時短ストレッチ系",
+          "note": "忙しい朝/休憩中に1本だけやる用"
+        },
+        {
+          "title": "【9分】ガチガチの肩こりを解消するストレッチ！【猫背 / 巻き肩 / ストレートネック解消】",
+          "url": "https://www.youtube.com/watch?v=8jqmWDjjERM",
+          "duration": "約9分",
+          "channel": "ストレッチ系",
+          "note": "猫背・巻き肩・ストレートネックを総合的に"
+        },
+        {
+          "title": "【毎日12分】ガチガチ肩こりは肩甲骨から治す！根本解消ストレッチ【理学療法士監修】",
+          "url": "https://www.youtube.com/watch?v=7FY6SR6cyts",
+          "duration": "約12分",
+          "channel": "理学療法士監修",
+          "note": "肩甲骨の動きにフォーカス。継続向き"
+        }
+      ]
+    },
+    "posture": {
+      "label": "姿勢改善",
+      "videos": [
+        {
+          "title": "姿勢改善ストレッチ！〇秒で実年齢より若く見せよう！",
+          "url": "https://www.youtube.com/watch?v=EOUvyGiOC18",
+          "duration": "約5分",
+          "channel": "姿勢改善系",
+          "note": "見た目年齢を意識した姿勢リセット"
+        },
+        {
+          "title": "【8分】腰痛・首こり・肩こりをまとめて解消するストレッチ！【座ったままできる】",
+          "url": "https://www.youtube.com/watch?v=bzGMeDoGpeA",
+          "duration": "約8分",
+          "channel": "座位ストレッチ系",
+          "note": "椅子に座ったまま全身の歪みを整える"
+        },
+        {
+          "title": "ガチガチ肩こりさんは絶対観て！肩こり解消ストレッチの真実を解説",
+          "url": "https://www.youtube.com/watch?v=yOKu3jLnRa0",
+          "duration": "約10分",
+          "channel": "オガトレ",
+          "note": "解説中心。なぜそのストレッチが効くかを理解できる"
+        },
+        {
+          "title": "疲れた時の１２分間の全身ストレッチ〜ゆっくり無理せず全身スッキリ〜",
+          "url": "https://www.youtube.com/watch?v=cqckeUDHSbY",
+          "duration": "約12分",
+          "channel": "B-life",
+          "note": "全身の姿勢リセット。寝る前にも"
+        },
+        {
+          "title": "【全身ストレッチ】2000万回再生された12分間の全身ストレッチ最新版！",
+          "url": "https://www.youtube.com/watch?v=FbLlFCBk1ms",
+          "duration": "約12分",
+          "channel": "B-life",
+          "note": "定番中の定番。姿勢の土台を整える"
+        }
+      ]
+    },
+    "abs": {
+      "label": "お腹",
+      "videos": [
+        {
+          "title": "【5分腹筋】下腹ぽっこり解消&くびれたウエストを作るお腹痩せ筋トレ【寝たまま/ストレッチ付き】",
+          "url": "https://www.youtube.com/watch?v=ebNivSxIMx0",
+          "duration": "約5分",
+          "channel": "のがちゃんねる系",
+          "note": "寝たままできる。下腹ぽっこり対策"
+        },
+        {
+          "title": "【５分腹筋】夏までに絶対お腹痩せしたい人これやるべき【インナーマッスル】",
+          "url": "https://www.youtube.com/watch?v=79MPaimw0Ys",
+          "duration": "約5分",
+          "channel": "腹筋系",
+          "note": "インナーマッスル中心。腰に優しい"
+        },
+        {
+          "title": "【腹筋引き締め】衰えやすい腹筋・姿勢・内臓位置を整える(クールダウン付き)",
+          "url": "https://www.youtube.com/live/w1bz7nGutbA",
+          "duration": "約20分",
+          "channel": "腹筋系ライブ",
+          "note": "やや長め。週末にしっかりやりたい日"
+        },
+        {
+          "title": "オガトレ式 お腹やせストレッチ",
+          "url": "https://tokusengai.com/_ct/17364927",
+          "duration": "解説記事+動画",
+          "channel": "オガトレ / 特選街",
+          "note": "三段腹・浮き輪肉対策の解説付き"
+        },
+        {
+          "title": "【全身ストレッチ】筋トレ前後に最適な１２分間の全身ストレッチダイエット",
+          "url": "https://www.youtube.com/watch?v=BxpS6jw_2L4",
+          "duration": "約12分",
+          "channel": "B-life",
+          "note": "お腹を含む全身。筋トレ前後にも"
+        }
+      ]
+    },
+    "back": {
+      "label": "腰背中",
+      "videos": [
+        {
+          "title": "ガチガチ背中をほぐす｜背中が痛い時のヨガストレッチ",
+          "url": "https://www.youtube.com/watch?v=gjFGCMcmhZg",
+          "duration": "約8分",
+          "channel": "ヨガ系",
+          "note": "背中全体をヨガポーズでじっくりほぐす"
+        },
+        {
+          "title": "【5分間】腰痛解消ストレッチ！3種目！",
+          "url": "https://www.youtube.com/watch?v=MptsYdWiBJU",
+          "duration": "約5分",
+          "channel": "腰痛ケア系",
+          "note": "シンプルな3種目。毎日続けやすい"
+        },
+        {
+          "title": "たった３分無理せずできる！寝ながら腰痛改善ストレッチ",
+          "url": "https://www.youtube.com/watch?v=p6kIUBFCnV0",
+          "duration": "約3分",
+          "channel": "寝ながら系",
+          "note": "起床直後・就寝前に布団の上で"
+        },
+        {
+          "title": "腰痛持ちの方へおすすめのストレッチ【10分間】",
+          "url": "https://www.youtube.com/watch?v=0HSnE1BRO-A",
+          "duration": "約10分",
+          "channel": "腰痛ケア系",
+          "note": "やや本格的。週数回継続したい日に"
+        },
+        {
+          "title": "腰痛・背中痛・肩こり予防ヨガ｜5分で背中側の硬さを一気に解消",
+          "url": "https://www.youtube.com/watch?v=Uw9QZ0RKcb0",
+          "duration": "約5分",
+          "channel": "ヨガ系",
+          "note": "予防目的。痛みがない日のメンテに"
+        }
+      ]
+    }
+  }
+}
